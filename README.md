@@ -53,7 +53,7 @@ function getCount() {
 }
 ```
 
-Or you can return `null`, meaning you can generate infinte number of flashcards (that is, until the cows come home, then...)
+Or you can return `null`, meaning you can generate infinte number of flashcards (that is, until the cows come home, then it's anybody's guess)
 
 ```js
 function getCount() {
@@ -63,7 +63,7 @@ function getCount() {
 
 ### getQuestion()
 
-This function should return a single question. It can be randomly generated to infinity (if your `getCount()` returned `null`)
+This function should return a single question. It can be randomly generated to infinity (if your `getCount()` returns `null`)
 
 ```js
 function getQuestion(_ignoreme) {
@@ -71,7 +71,7 @@ function getQuestion(_ignoreme) {
 }
 ```
 
-Or it can be the next in sequence
+Or it can be the next question in sequence:
 
 ```js
 const questions = ['Meaning of life?', 'Meaning of Love?'];
