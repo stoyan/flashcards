@@ -1,0 +1,83 @@
+.App {
+  text-align: center;
+}
+
+.App-header, .App-footer {
+  background-color: #3B5163;
+  padding: 20px;
+  color: #efefef;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.App-body {
+  font-size: large;
+  color: #111;
+  padding: 20px;
+}
+
+.App-footer {
+  font-size: small;
+}
+
+.card {
+  border: 1px solid #6C9FAA;
+  border-radius: 4px;
+  padding: 30px;
+  margin: 20px;
+  
+}
+
+button {
+  color: white;
+  padding: 10px 20px;
+  font-size: large;
+  margin-bottom: 10px;
+}
+
+.nextButton{
+  background: #3B5163;
+}
+
+.answerButton{
+  background: #83A04E;
+}
+
+
+
+
+/* I'm done, let https://davidwalsh.name/css-flip take over */
+
+.flip-container.hover .flipper, .flip-container.flip .flipper {
+	transform: rotateY(180deg);
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.3s;
+	transform-style: preserve-3d;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
