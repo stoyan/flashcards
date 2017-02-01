@@ -34,3 +34,79 @@ Profit.
 This template in action: https://tools.w3clubs.com/flashcards/
 
 An app built from this template: https://tools.w3clubs.com/reactorpizza/ 
+
+## A little more
+
+Once you create your new app from the template, you need to go edit `App.js`.
+
+Up there at the top are three functions you need to implement. (Of course you can edit any and all JS/CSS/HTML but this here describes the simplest use scenario).
+
+The functions are:
+
+### getCount()
+
+You can return the total number of flashcards, e.g.
+
+```js
+function getCount() {
+  return 101;
+}
+```
+
+Or you can return `null`, meaning you can generate infinte number of flashcards (that is, until the cows come home, then...)
+
+```js
+function getCount() {
+  return null;
+}
+```
+
+### getQuestion()
+
+This function should return a single question. It can be randomly generated to infinity (if your `getCount()` returned `null`)
+
+```js
+function getQuestion(_ignoreme) {
+  return Math.random();
+}
+```
+
+Or it can be the next in sequence
+
+```js
+const questions = ['Meaning of life?', 'Meaning of Love?'];
+function getQuestion(i) { // i starts with 1
+  return questions[i - 1];
+}
+```
+
+### getAnswer()
+
+Exactly like `getQuestion()`, it should return the answer to the `i`-th question
+
+```js
+const answers = ['42', '42'];
+function getAnswer(i) {
+  return answers[i - 1];
+}
+```
+
+If your question was randomly generated, maybe a temp var could help
+
+```js
+let answer;
+function getQuestion(_whatever) {
+  const a = Math.floor(Math.random() * 100);
+  const b = Math.floor(Math.random() * 10);
+  answer = a + b;
+  return `${a} + ${b}`;
+}
+
+function getAnswer(_nobodycares) {
+  return answer;
+}
+```
+
+## LMK
+
+Find me on <a href="https://twitter.com/stoyanstefanov">Twitter</a> with questions, spelling corrections or utter disappointment in thus here offering.
