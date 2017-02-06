@@ -36,34 +36,25 @@ class App extends Component {
   
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <h1>flashcards</h1>
-          <p>Quiz your knowledge</p>
-        </div>
-        <div className="App-body">
-          {
-            this.state.total 
-              ? <Count i={this.state.i} total={this.state.total} />
-              : null
-          }
-          <Flashcard 
-            question={this.state.question}
-            answer={this.state.answer}
-          />
-          {
-            (this.state.total && this.state.i >= this.state.total)
-              ? null
-              : <button 
-                  className="nextButton" 
-                  onClick={this.nextQuestion.bind(this)}>
-                  next...
-                </button>
-          }
-        </div>
-        <div className="App-footer">
-          created with love
-        </div>
+      <div>
+        {
+          this.state.total 
+            ? <Count i={this.state.i} total={this.state.total} />
+            : null
+        }
+        <Flashcard 
+          question={this.state.question}
+          answer={this.state.answer}
+        />
+        {
+          (this.state.total && this.state.i >= this.state.total)
+            ? null
+            : <button 
+                className="nextButton" 
+                onClick={this.nextQuestion.bind(this)}>
+                next...
+              </button>
+        }
       </div>
     );
   }
@@ -93,14 +84,14 @@ class Flashcard extends Component {
     const className = "card flip-container" + (this.state.reveal ? ' flip' : '');
     return (
       <div><center>
-        <div className={className}>
-        	<div className="flipper">
-        		<div className="front" style={{display: this.state.reveal ? 'none' : ''}}>
+        <div className={className} onClick={this.flip.bind(this)}>
+          <div className="flipper">
+            <div className="front" style={{display: this.state.reveal ? 'none' : ''}}>
               {this.props.question}
-        		</div>
-        		<div className="back"  style={{display: this.state.reveal ? '' : 'none'}}>
+            </div>
+            <div className="back"  style={{display: this.state.reveal ? '' : 'none'}}>
               {this.props.answer}
-        		</div>
+            </div>
         	</div>
         </div>
         <button className="answerButton" onClick={this.flip.bind(this)}>flip</button>

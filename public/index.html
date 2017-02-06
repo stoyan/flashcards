@@ -7,9 +7,51 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <meta name="theme-color" content="#222">
     <title>flashcards</title>
+    <style>
+    
+    body {
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      font-family: Helvetica Neue, sans-serif;
+    }
+
+    .App {
+      text-align: center;
+    }
+
+    .App-header, .App-footer {
+      background-color: #3B5163;
+      padding: 20px;
+      color: #efefef;
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    .App-body {
+      font-size: large;
+      color: #111;
+      padding: 20px;
+    }
+
+    .App-footer {
+      font-size: small;
+    }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div class="App">
+      <div class="App-header">
+        <h1>flashcards</h1>
+        <p>Quiz your knowledge</p>
+      </div>
+      <div class="App-body" id="root">Generating flashcards...</div>
+      <div class="App-footer">
+        created with love
+      </div>
+    </div>
     <script>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('service-worker.js');

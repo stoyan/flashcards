@@ -1,9 +1,3 @@
-body {
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-}
-
 body, input, textarea, keygen, select, button {
   font-family: Helvetica Neue, sans-serif;
 }
